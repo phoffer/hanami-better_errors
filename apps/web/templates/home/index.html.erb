@@ -1,0 +1,30 @@
+<h3>The Problem</h3>
+No matter what, the root page won't work for better_errors, because the <code>env['SCRIPT_NAME']</code> is set to <code>'/'</code>.
+<br /><br />
+It will work for other pages though. To test, go to <%= link_to '/error', routes.error_path, title: 'error' %> to see better_errors in action.
+<br /><br />
+If you start the server with the <code>--no-code-reloading</code> flag, then better_errors will operate correctly.
+<br /><br />
+If you start the server normally (<code>hanami server</code>), then better_errors won't load the right hand side of its custom error page.
+<br /><br />
+NOTE: This demo bundles better_errors from <%= link_to 'phoffer/better_errors', 'https://github.com/phoffer/better_errors', title: 'better_errors github' %>.
+<br />
+The only change from charliesome/better_errors is to print out the middleware's object_id for debugging.
+<br /><br /><br />
+<h3>The cause</h3>
+The problem is that every request has a new instance of the better_errors middleware object.
+<br />
+This is true when the middleware is mounted as an Application Middleware, regardless of whether code reloading is enabled.
+<br />
+For global middleware, this is true if code reloading is enabled. If disabled, then better_errors works correctly.
+<br /><br />
+<br /><br />
+This app loads better_errors globally in config.ru.
+<br />
+It has the application middleware code in place but commented out, for quick checking.
+<br /><br />
+
+<h3>Extra</h3>
+This repo includes a sinatra app, and everything required was included in the Gemfile.
+<br /><br />
+To run, just <code>bundle exec ruby sinatra.rb</code>

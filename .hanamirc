@@ -1,0 +1,4 @@
+project=struggling_errors
+architecture=container
+test=minitest
+template=erb

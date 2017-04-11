@@ -1,0 +1,2 @@
+module StrugglingErrors
+end
