@@ -1,3 +1,9 @@
+### TLDR
+
+Start Hanami server, navigate to root to get started.
+
+Pay attention in logs to object IDs for better_errors middleware object.
+
 ### The Problem
 
 No matter what, the root page won't work for better_errors, because the `env['SCRIPT_NAME']` is set to `'/'`.
