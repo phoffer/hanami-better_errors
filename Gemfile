@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'puma'
 gem 'rake'
 gem 'hanami',       '~> 1.0'
 # gem 'hanami-model', '~> 1.0'
@@ -10,7 +11,8 @@ gem 'sqlite3'
 group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
-  gem 'shotgun'
+  # gem 'shotgun'
+  gem 'listen'
   gem 'better_errors', github: 'phoffer/better_errors'
   # gem 'better_errors'
   gem 'binding_of_caller'

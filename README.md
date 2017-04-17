@@ -1,3 +1,10 @@
+## update 4/16/2017
+
+Thanks to [@ixti](https://github.com/ixti/hanami-hot-reloaded), we can start Hanami **with** code reloading, via the listen gem. Start the server this way:
+```
+bundle exec puma -C config/puma.rb
+```
+
 ### TLDR
 
 Start Hanami server, navigate to root to get started.
